@@ -22,7 +22,7 @@ public class Agendamento {
     private String titulo;
 
     @Column(columnDefinition = "TEXT")
-    private String descrição;
+    private String descricao;
 
     @Column(name = "data_inicio", nullable = false)
     private LocalDateTime dataInicio;

@@ -1,0 +1,10 @@
+POST http://localhost:8080/api/agendamentos
+Content-Type: application/json
+
+{
+    "titulo": "Reunião Sprint",
+    "descricao": "Teste",
+    "dataInicio": "2026-01-27T15:10:00",
+    "dataFim": "2026-01-27T17:10:00",
+    "usuario": "emanuel"
+}

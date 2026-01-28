@@ -2,7 +2,7 @@ package dev.emjeisom.miniagendamento.mapper;
 
 import dev.emjeisom.miniagendamento.dto.AgendamentoCreateRequest;
 import dev.emjeisom.miniagendamento.dto.AgendamentoResponse;
-import dev.emjeisom.miniagendamento.dto.AgendamentoUpdadeRequest;
+import dev.emjeisom.miniagendamento.dto.AgendamentoUpdateRequest;
 import dev.emjeisom.miniagendamento.model.Agendamento;
 import dev.emjeisom.miniagendamento.model.StatusAgendamento;
 
@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 public class AgendamentoMapper {
     public static Agendamento toEntity(AgendamentoCreateRequest req){
         return Agendamento.builder()
-                .titulo(req.Titulo())
-                .descrição(req.descricao())
+                .titulo(req.titulo())
+                .descricao(req.descricao())
                 .dataInicio(req.dataInicio())
                 .dataFim(req.dataFim())
                 .usuario(req.usuario())
@@ -22,12 +22,12 @@ public class AgendamentoMapper {
                 .build();
     }
 
-    public static void merge(Agendamento entity, AgendamentoUpdadeRequest req){
+    public static void merge(Agendamento entity, AgendamentoUpdateRequest req){
         if (req.titulo() != null){
             entity.setTitulo(req.titulo());
         }
         if (req.descricao() != null){
-            entity.setDescrição(req.descricao());
+            entity.setDescricao(req.descricao());
         }
         if(req.dataInicio() != null){
             entity.setDataInicio(req.dataInicio());
@@ -41,7 +41,7 @@ public class AgendamentoMapper {
         return new AgendamentoResponse(
                 a.getId(),
                 a.getTitulo(),
-                a.getDescrição(),
+                a.getDescricao(),
                 a.getDataInicio(),
                 a.getDataFim(),
                 a.getStatus(),
